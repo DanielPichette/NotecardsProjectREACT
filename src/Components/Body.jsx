@@ -8,7 +8,7 @@ class Body extends Component {
         super(props);
         this.state = {
             allCollections: [],
-            allCards: []
+            allCards: [],
         }
     }
     componentDidMount(){
@@ -37,7 +37,7 @@ class Body extends Component {
        if(this.props.view==='collections'){
           return (
             <div class='content' >
-              <CollectionView />
+              <CollectionView collections={this.state.allCollections}/>
             </div>
           );
     }
