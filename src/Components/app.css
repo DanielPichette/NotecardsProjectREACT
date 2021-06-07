@@ -1,5 +1,5 @@
 .wrapper{
-    background-color: rgb(156, 189, 208);
+    background-color: rgb(216, 252, 253);
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 3em auto;
