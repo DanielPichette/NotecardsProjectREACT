@@ -35,17 +35,6 @@ class Body extends Component {
         console.log(this.state.allCards)
     }
 
-    navCollections(){
-        this.setState({
-            view: 'collections',
-        })
-    }
-
-    navCards(){
-        this.setState({
-            view: 'allCards',
-        })
-    }
 
     render() { 
        if(this.props.view==='collections'){

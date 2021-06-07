@@ -31,7 +31,7 @@ class App extends Component {
                         <Searchbar />
                     </div>
                     <div class='navigation'>
-                        <Navigation collections={this.navCollections()} cards={this.allCards()}/>
+                        <Navigation collections={() => this.navCollections()} cards={()=> this.navCards()}/>
                     </div>
                     
                     <div class='body' >
