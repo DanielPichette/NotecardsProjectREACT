@@ -1,0 +1,25 @@
+.wrapper{
+    background-color: rgb(156, 189, 208);
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 3em auto;
+    grid-template-areas: 
+    'search search'
+    'nav body';
+}
+
+.navigation{
+    display: grid;
+    grid-area: nav;
+    height: 100vh;
+}
+
+.searchbar{
+    display: grid;
+    grid-area: search;
+}
+
+.body{
+    display: grid;
+    grid-area: body;
+}

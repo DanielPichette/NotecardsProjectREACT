@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 
-class NewCard extends Component {
+class NewCollection extends Component {
     constructor(props) {
         super(props);
             this.state = {
-                collection: '',
-                word: '',
-                allComments:'',
+                name: '',
              }
         }
-    handleDefinitionChange = (event) =>{
+    
+    handleChange = (event) =>{
         this.setState({
-        body: event.target.value
-        });
-        };
-
-    handleTermChange = (event) =>{
-        this.setState({
-        body: event.target.value
+        name: event.target.value
         });
        };
 
@@ -37,17 +30,12 @@ class NewCard extends Component {
            <div>
                 <form className="newCardForm" onSubmit={(event) => this.handleSubmit(event)}>
                     <div>
-                        <label>Term</label>
+                        <label>Name</label>
                     </div> 
                     <div>
-                        <input type="text" name="word" onChange={(event) => this.handleTermChange(event)}/>
+                        <input type="text" name="word" onChange={(event) => this.handleChange(event)}/>
                     </div>
-                    <div>
-                        <label>Definition</label>
-                    </div> 
-                    <div>
-                        <input type="text" name="definition" onChange={(event) => this.handleDefinitionChange(event)}/>
-                    </div>
+
                     <button type="submit" >Create</button>
                 
                 </form>
@@ -56,4 +44,4 @@ class NewCard extends Component {
     }
 }
 
-export default NewCard;
+export default NewCollection;

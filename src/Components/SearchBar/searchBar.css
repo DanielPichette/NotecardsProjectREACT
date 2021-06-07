@@ -1,0 +1,18 @@
+input{
+    height: 2.5em;
+    width: 60vw;
+    border-radius: 25px;
+    padding-left: 10px;
+    
+
+}
+
+.searchbody{
+    display: grid;
+    place-content: center;
+    background-color: rgb(78, 113, 123);
+}
+.SearchBar{
+    place-content: center
+   ;
+}
