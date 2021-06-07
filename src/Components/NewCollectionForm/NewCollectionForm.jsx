@@ -17,11 +17,11 @@ class NewCollection extends Component {
     handleSubmit = (event) =>{
         event.preventDefault();
 
-        const newComment = {
-            collection: this.props.collection,
-            word: this.state.word,
-            definition: this.state.definition,
-        }
+        // const newComment = {
+        //     collection: this.props.collection,
+        //     word: this.state.word,
+        //     definition: this.state.definition,
+        // }
      };
 
 

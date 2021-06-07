@@ -13,8 +13,7 @@
     place-content: center;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto ;
-    grid-row-gap: 10px;
-    grid-column-gap: 10px;
+    grid-row-gap: 20px;
     
 }
 
@@ -27,9 +26,9 @@
     display: grid;
     background-color: rgba(255, 255, 255, 0.425);
     place-content: center;
-    height:25vh;
-    width: 22vw;
+    height:27vh;
+    width: 20vw;
     margin: auto;
     margin-bottom: 10px;
-    margin-top: 10ox;
+    margin-top: 10px;
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'; 
 import axios from 'axios';
 import CollectionView from './CollectionView/collection'
+import NewCollection from './NewCollectionForm/NewCollectionForm'
+import CardView from './CardView/cardview';
 
 
 class Body extends Component {
@@ -33,6 +35,18 @@ class Body extends Component {
         console.log(this.state.allCards)
     }
 
+    navCollections(){
+        this.setState({
+            view: 'collections',
+        })
+    }
+
+    navCards(){
+        this.setState({
+            view: 'allCards',
+        })
+    }
+
     render() { 
        if(this.props.view==='collections'){
           return (
@@ -40,14 +54,23 @@ class Body extends Component {
               <CollectionView collections={this.state.allCollections}/>
             </div>
           );
-    }
-        else if (this.state.View==='cards'){
+        }
+    
+        else if (this.props.view==='newCollection'){
           return(
             <div>
-              <collectionView />
+              <NewCollection />
             </div>
-      );
-    }
+            );
+        }
+
+        else if (this.props.view==='allCards'){
+            return(
+              <div>
+                <CardView cards={this.state.allCards}/>
+              </div>
+            );
+        };
     
     
   }

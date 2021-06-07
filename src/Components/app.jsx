@@ -8,12 +8,22 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            view: 'collections',
+            view: 'allCards',
             allCards: [],
             collection:[],   
         }
     }
-  
+    navCollections(){
+        this.setState({
+            view: 'collections',
+        })
+    }
+
+    navCards(){
+        this.setState({
+            view: 'allCards',
+        })
+    }
     render() { 
             return ( 
                 <div class='wrapper'>
@@ -21,7 +31,7 @@ class App extends Component {
                         <Searchbar />
                     </div>
                     <div class='navigation'>
-                        <Navigation/>
+                        <Navigation collections={this.navCollections()} cards={this.allCards()}/>
                     </div>
                     
                     <div class='body' >
