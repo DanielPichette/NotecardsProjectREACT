@@ -1,11 +1,13 @@
 .wrapper{
-    background-color: rgb(216, 252, 253);
+    background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 3em auto;
     grid-template-areas: 
     'search search'
     'nav body';
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
 }
 
 .navigation{
@@ -22,4 +24,5 @@
 .body{
     display: grid;
     grid-area: body;
+    background-color: rgb(200, 200, 200);
 }
