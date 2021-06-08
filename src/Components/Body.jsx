@@ -13,8 +13,8 @@ class Body extends Component {
             allCollections: [],
             allCards: [],
             currentCollection: 1,
-            currentCollectionName: '',
-            currentDeck: [],
+            currentCollectionName: 'N collection selected',
+            currentDeck: [{id: 1, word: "please select a collection",definition:"No collection selected"}],
         }
     }
     componentDidMount(){
