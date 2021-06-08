@@ -11,6 +11,8 @@ class Body extends Component {
         this.state = {
             allCollections: [],
             allCards: [],
+            currentCollection: 0,
+            currentDeck: [],
         }
     }
     componentDidMount(){
@@ -22,9 +24,9 @@ class Body extends Component {
         let collections = await axios.get(`http://127.0.0.1:8000/collections/`)
         console.log(collections)
         this.setState({
-            allCollections: collections.data
+            allCollections: collections.data,
         })
-        console.log(this.state.allCollections)
+        console.log('all collections:',this.state.allCollections)
     };
 
     getCards = async() => {
@@ -32,15 +34,33 @@ class Body extends Component {
         this.setState({
             allCards: notecards.data
         })
-        console.log(this.state.allCards)
+        console.log('all notecards:',this.state.allCards)
     }
+
+    setCurrentCollection(index){
+        //let collections= this.state.allCollections
+        //let selection= index
+        this.setState({
+            currentCollection: index,
+        })
+        console.log('TEST:', index)
+    }
+    getCurrentDeck(){
+        let currentCollection=this.state.currentCollection
+        let all=this.state.allCards
+        let index= this.state.currentCollection = 1
+        let deck= all.filter( card => card.collection === currentCollection[index])
+        console.log('CURRENT DECK')
+        console.log(deck);
+        ;
+    };
 
 
     render() { 
        if(this.props.view==='collections'){
           return (
             <div class='content' >
-              <CollectionView collections={this.state.allCollections}/>
+              <CollectionView collections={this.state.allCollections} currentCollection={(data)=>this.setCurrentCollection(data)}/>
             </div>
           );
         }

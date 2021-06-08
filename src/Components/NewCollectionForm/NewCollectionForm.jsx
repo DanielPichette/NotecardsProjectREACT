@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class NewCollection extends Component {
     constructor(props) {
@@ -12,10 +13,17 @@ class NewCollection extends Component {
         this.setState({
         name: event.target.value
         });
+        console.log("testingtesting", this.state.value)
        };
 
-    handleSubmit = (event) =>{
+    handleSubmit = async(event) =>{
         event.preventDefault();
+
+        let newCollection = {
+                "name": this.state.name
+        }
+
+        await axios.post(`http://127.0.0.1:8000/collections/`,{newCollection});
 
         // const newComment = {
         //     collection: this.props.collection,
@@ -28,12 +36,12 @@ class NewCollection extends Component {
     render() {
         return (           
            <div>
-                <form className="newCardForm" onSubmit={(event) => this.handleSubmit(event)}>
+                <form className="newCollection" onSubmit={(event) => this.handleSubmit(event)}>
                     <div>
-                        <label>Name</label>
+                        <label> Collection Name</label>
                     </div> 
                     <div>
-                        <input type="text" name="word" onChange={(event) => this.handleChange(event)}/>
+                        <input type="text" name="name" onChange={(event) => this.handleChange(event)}/>
                     </div>
 
                     <button type="submit" >Create</button>

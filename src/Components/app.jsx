@@ -10,7 +10,9 @@ class App extends Component {
         this.state = {
             view: 'allCards',
             allCards: [],
-            collection:[],   
+            collection:[],
+            currentCollection: [],
+            currentDeck:[],
         }
     }
     navCollections(){
@@ -24,6 +26,24 @@ class App extends Component {
             view: 'allCards',
         })
     }
+
+    navNewCollection(){
+        this.setState({
+            view: 'newCollection',
+        })
+    }
+
+    setCurrentCollection(data){
+        this.setState({
+            currentCollection: data,
+        })
+    }
+    setCurrentDeck(data){
+        this.setState({
+            currentDeck: data,
+        })
+    }
+
     render() { 
             return ( 
                 <div class='wrapper'>
@@ -31,11 +51,11 @@ class App extends Component {
                         <Searchbar />
                     </div>
                     <div class='navigation'>
-                        <Navigation collections={() => this.navCollections()} cards={()=> this.navCards()}/>
+                        <Navigation collections={() => this.navCollections()} cards={()=> this.navCards()} newCollection={() => this.navNewCollection()} />
                     </div>
                     
                     <div class='body' >
-                        <Body view={this.state.view}/>
+                        <Body view={this.state.view} currentDeck={()=>this.setCurrentDeck()} currentCollection={()=>this.currentCollection()}/>
                     </div>
 
                 </div>
