@@ -5,6 +5,7 @@ import NewCollection from './NewCollectionForm/NewCollectionForm'
 import CardView from './CardView/cardview';
 import Quiz from './Quiz/quiz';
 import CurrentCollection from './currentCollection/currentCollection';
+import NewCard from './NewCardForm/newCardForm';
 
 
 class Body extends Component {
@@ -94,6 +95,13 @@ class Body extends Component {
             return(
               <div>
                 <CurrentCollection collection={this.state.currentCollectionName} cards={this.state.currentDeck}/>
+              </div>
+            );
+        }
+        else if (this.props.view==='newCard'){
+            return(
+              <div>
+                <NewCard collection={this.state.currentCollection} />
               </div>
             );
         }
