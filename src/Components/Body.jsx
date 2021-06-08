@@ -101,7 +101,7 @@ class Body extends Component {
         else if (this.props.view==='newCard'){
             return(
               <div>
-                <NewCard collection={this.state.currentCollection} />
+                <NewCard collection={this.state.currentCollection} name={this.state.currentCollectionName}/>
               </div>
             );
         }

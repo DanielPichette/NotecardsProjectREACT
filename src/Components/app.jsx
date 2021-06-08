@@ -33,6 +33,12 @@ class App extends Component {
         })
     }
 
+    navNewCard(){
+        this.setState({
+            view: 'newCard',
+        })
+    }
+
     navNewCollection(){
         this.setState({
             view: 'newCollection',
@@ -62,7 +68,7 @@ class App extends Component {
                         <Searchbar />
                     </div>
                     <div class='navigation'>
-                        <Navigation collections={() => this.navCollections()} cards={()=> this.navCards()} newCollection={() => this.navNewCollection()} quiz={()=> this.navQuiz()} current={()=> this.navCurrentCollection()} view={this.state.view}/>
+                        <Navigation collections={() => this.navCollections()} cards={()=> this.navCards()} newCollection={() => this.navNewCollection()} quiz={()=> this.navQuiz()} current={()=> this.navCurrentCollection()} view={this.state.view} newCard={() => this.navNewCard()} />
                     </div>
                     
                     <div class='body' >

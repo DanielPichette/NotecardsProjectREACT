@@ -23,20 +23,22 @@ class NewCard extends Component {
        };
 
     handleSubmit = async(event) =>{
-        event.preventDefault();
+        //event.preventDefault();
 
         const newCard = {
             collection: this.props.collection,
             word: this.state.word,
             definition: this.state.definition,
         }
-        await axios.post(`http://127.0.0.1:8000/collections/`,newCard);
+        await axios.post(`http://127.0.0.1:8000/notecards/`,newCard);
      };
 
 
     render() {
         return (           
            <div>
+               <h2> Collection: {this.props.name}</h2>
+               <h2>New Card:</h2>
                 <form className="newCardForm" onSubmit={(event) => this.handleSubmit(event)}>
                     <div>
                         <label>Term</label>
