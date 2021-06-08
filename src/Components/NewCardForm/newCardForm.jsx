@@ -6,7 +6,7 @@ class NewCard extends Component {
             this.state = {
                 collection: '',
                 word: '',
-                allComments:'',
+                definition:'Please make sure you have a collection selected before you attemopt to create a new card. cards without a collection will be lost in cyberspace!',
              }
         }
     handleDefinitionChange = (event) =>{
