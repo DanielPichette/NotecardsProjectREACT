@@ -13,17 +13,17 @@ class NewCollection extends Component {
         this.setState({
         name: event.target.value
         });
-        console.log("testingtesting", this.state.value)
+        console.log("testingtesting", this.state.name)
        };
 
     handleSubmit = async(event) =>{
-        event.preventDefault();
+        //event.preventDefault();
 
         let newCollection = {
-                "name": this.state.name
+                name: this.state.name
         }
 
-        await axios.post(`http://127.0.0.1:8000/collections/`,{newCollection});
+        await axios.post(`http://127.0.0.1:8000/collections/`,newCollection);
 
         // const newComment = {
         //     collection: this.props.collection,
