@@ -5,23 +5,23 @@ class CollectionView extends Component{
     constructor(props){
     super(props)
     this.state = { 
-        index: 0,
+        ID: 1,
      }
     }
 
-    getIndex(index){
-        console.log(index)
-        let response = index
-        console.log(this.state.index)
-        this.setIndex(response)
+    getID(id){
+        console.log(id)
+        let response = id
+        console.log(this.state.ID)
+        this.setID(response)
     }
 
-    setIndex(index){
+    setID(id){
         this.setState({
-            index: index
+            ID: id,
         })
-        console.log('new index is:', this.state.index)
-        this.props.currentCollection(this.state.index);
+        console.log('new ID is:', this.state.ID)
+        this.props.currentCollection(this.state.ID);
     }
 
     render() { 
@@ -32,9 +32,9 @@ class CollectionView extends Component{
                     <h5>(total collections: {this.props.collections.length})</h5>
                 </div>
                 <div className='grid'>
-                    {this.props.collections.map( (collection, index) =>{
+                    {this.props.collections.map( (collection) =>{
                         return(
-                            <div className="card" onClick={()=>this.getIndex(index)}>
+                            <div className="card" onClick={(event)=>this.props.currentCollection(collection.id)}>
                                 <h3 >{collection.name}</h3>
                             </div>
                         )

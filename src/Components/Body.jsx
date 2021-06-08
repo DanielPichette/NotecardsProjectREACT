@@ -37,22 +37,20 @@ class Body extends Component {
         console.log('all notecards:',this.state.allCards)
     }
 
-    setCurrentCollection(index){
-        //let collections= this.state.allCollections
-        //let selection= index
+    setCurrentCollection(id){
         this.setState({
-            currentCollection: index,
+            currentCollection: id,
         })
-        console.log('TEST:', index)
+        let deck= this.state.allCards.filter(function(card){return(card.collection===id)});
+        this.setState({
+            currentDeck: deck,
+        });
+        this.getCurrentDeck();
     }
+
     getCurrentDeck(){
-        let currentCollection=this.state.currentCollection
-        let all=this.state.allCards
-        let index= this.state.currentCollection = 1
-        let deck= all.filter( card => card.collection === currentCollection[index])
-        console.log('CURRENT DECK')
-        console.log(deck);
-        ;
+        console.log('CURRENT DECK', this.state.currentDeck)
+    
     };
 
 
@@ -60,7 +58,7 @@ class Body extends Component {
        if(this.props.view==='collections'){
           return (
             <div class='content' >
-              <CollectionView collections={this.state.allCollections} currentCollection={(data)=>this.setCurrentCollection(data)}/>
+              <CollectionView collections={this.state.allCollections} currentCollection={(id)=>this.setCurrentCollection(id)}/>
             </div>
           );
         }
