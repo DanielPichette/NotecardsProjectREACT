@@ -34,7 +34,7 @@ class CollectionView extends Component{
                 <div className='grid'>
                     {this.props.collections.map( (collection) =>{
                         return(
-                            <div className="card" onClick={(event)=>this.props.currentCollection(collection.id)}>
+                            <div className="card" onClick={(event)=>this.props.currentCollection(collection.id, collection.name)}>
                                 <h3 >{collection.name}</h3>
                             </div>
                         )

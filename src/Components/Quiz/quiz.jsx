@@ -8,15 +8,15 @@ class Quiz extends Component {
         this.state = {
             allCollections: [],
             allCards: [],
-            currentCollection: 0,
-            deck: [],
+            currentCollection: this.props.name,
+            deck: this.props.deck,
             cardIndex: 0,
         }
     }
     nextCard(){
         let tempCard = this.state.cardIndex;
         tempCard ++
-        if(tempCard === this.deck.length){
+        if(tempCard === this.state.deck.length){
             tempCard = 0;
         }
         this.setState({
@@ -28,7 +28,7 @@ class Quiz extends Component {
         let tempCard = this.state.cardIndex;
         tempCard --;
         if(tempCard < 0){
-            tempCard = this.deck.length - 1;
+            tempCard = this.state.deck.length - 1;
         }
         this.setState({
             cardIndex: tempCard
@@ -38,10 +38,10 @@ class Quiz extends Component {
     render(){
     return(
         <div QuizBaody>
-            <button> Previos card</button>
+            <button onClick={() => this.previouseCard()} > Previos card</button>
             <div>
-                <h1>{this.deck[this.cardIndex].word}</h1>
-                <h4>{this.deck[this.cardIndex].definition}</h4>
+                <h1>{this.state.deck[this.state.cardIndex].word}</h1>
+                <h4>{this.state.deck[this.state.cardIndex].definition}</h4>
             </div>
             <button onClick= {() => this.nextCard()} >Next card</button>
 

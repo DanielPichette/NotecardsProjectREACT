@@ -8,7 +8,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            view: 'allCards',
+            view: 'collections',
             allCards: [],
             collection:[],
             currentCollection: [],
@@ -18,6 +18,12 @@ class App extends Component {
     navCollections(){
         this.setState({
             view: 'collections',
+        })
+    }
+
+    navQuiz(){
+        this.setState({
+            view: 'quiz',
         })
     }
 
@@ -51,7 +57,7 @@ class App extends Component {
                         <Searchbar />
                     </div>
                     <div class='navigation'>
-                        <Navigation collections={() => this.navCollections()} cards={()=> this.navCards()} newCollection={() => this.navNewCollection()} />
+                        <Navigation collections={() => this.navCollections()} cards={()=> this.navCards()} newCollection={() => this.navNewCollection()} quiz={()=> this.navQuiz()}/>
                     </div>
                     
                     <div class='body' >

@@ -3,6 +3,7 @@ import axios from 'axios';
 import CollectionView from './CollectionView/collection'
 import NewCollection from './NewCollectionForm/NewCollectionForm'
 import CardView from './CardView/cardview';
+import Quiz from './Quiz/quiz';
 
 
 class Body extends Component {
@@ -11,7 +12,8 @@ class Body extends Component {
         this.state = {
             allCollections: [],
             allCards: [],
-            currentCollection: 0,
+            currentCollection: 1,
+            currentCollectionName: '',
             currentDeck: [],
         }
     }
@@ -37,9 +39,10 @@ class Body extends Component {
         console.log('all notecards:',this.state.allCards)
     }
 
-    setCurrentCollection(id){
+    setCurrentCollection(id,name){
         this.setState({
             currentCollection: id,
+            currentCollectionName: name,
         })
         let deck= this.state.allCards.filter(function(card){return(card.collection===id)});
         this.setState({
@@ -77,7 +80,15 @@ class Body extends Component {
                 <CardView cards={this.state.allCards}/>
               </div>
             );
-        };
+        }
+
+        else if (this.props.view==='quiz'){
+            return(
+              <div>
+                <Quiz deck={this.state.currentDeck} name={this.state.currentCollectionName}/>
+              </div>
+            );
+        }
     
     
   }
