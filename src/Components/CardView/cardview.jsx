@@ -1,7 +1,6 @@
 import React from 'react';
 
 function CardView(props){
-    let flip='no'
     return(
         <div className='main'>
             <div class='header'>
@@ -16,7 +15,7 @@ function CardView(props){
                             <h3 >{card.word}</h3>
                         </div>
                     )
-                })}
+                })};
 
             </div>
         </div>

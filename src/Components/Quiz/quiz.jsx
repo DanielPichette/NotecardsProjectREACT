@@ -38,6 +38,10 @@ class Quiz extends Component {
     render(){
     return(
         <div QuizBaody>
+            <div>
+                <h3>Collection: {this.state.currentCollection}</h3>
+                <h5>Card: {this.state.cardIndex + 1} of {this.state.deck.length}</h5>
+            </div>
             <button onClick={() => this.previouseCard()} > Previos card</button>
             <div>
                 <h1>{this.state.deck[this.state.cardIndex].word}</h1>

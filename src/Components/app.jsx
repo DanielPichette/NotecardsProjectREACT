@@ -38,6 +38,11 @@ class App extends Component {
             view: 'newCollection',
         })
     }
+    navCurrentCollection(){
+        this.setState({
+            view: 'currentCollection',
+        })
+    }
 
     setCurrentCollection(data){
         this.setState({
@@ -57,11 +62,11 @@ class App extends Component {
                         <Searchbar />
                     </div>
                     <div class='navigation'>
-                        <Navigation collections={() => this.navCollections()} cards={()=> this.navCards()} newCollection={() => this.navNewCollection()} quiz={()=> this.navQuiz()}/>
+                        <Navigation collections={() => this.navCollections()} cards={()=> this.navCards()} newCollection={() => this.navNewCollection()} quiz={()=> this.navQuiz()} current={()=> this.navCurrentCollection()} view={this.state.view}/>
                     </div>
                     
                     <div class='body' >
-                        <Body view={this.state.view} currentDeck={()=>this.setCurrentDeck()} currentCollection={()=>this.currentCollection()}/>
+                        <Body view={this.state.view} currentDeck={()=>this.setCurrentDeck()} />
                     </div>
 
                 </div>

@@ -4,6 +4,7 @@ import CollectionView from './CollectionView/collection'
 import NewCollection from './NewCollectionForm/NewCollectionForm'
 import CardView from './CardView/cardview';
 import Quiz from './Quiz/quiz';
+import CurrentCollection from './currentCollection/currentCollection';
 
 
 class Body extends Component {
@@ -13,7 +14,7 @@ class Body extends Component {
             allCollections: [],
             allCards: [],
             currentCollection: 1,
-            currentCollectionName: 'N collection selected',
+            currentCollectionName: 'No collection selected',
             currentDeck: [{id: 1, word: "please select a collection",definition:"No collection selected"}],
         }
     }
@@ -61,7 +62,7 @@ class Body extends Component {
        if(this.props.view==='collections'){
           return (
             <div class='content' >
-              <CollectionView collections={this.state.allCollections} currentCollection={(id)=>this.setCurrentCollection(id)}/>
+              <CollectionView collections={this.state.allCollections} currentCollection={(id,name)=>this.setCurrentCollection(id,name)}/>
             </div>
           );
         }
@@ -89,7 +90,13 @@ class Body extends Component {
               </div>
             );
         }
-    
+        else if (this.props.view==='currentCollection'){
+            return(
+              <div>
+                <CurrentCollection collection={this.state.currentCollectionName} cards={this.state.currentDeck}/>
+              </div>
+            );
+        }
     
   }
 }
