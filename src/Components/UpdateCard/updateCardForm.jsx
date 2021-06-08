@@ -30,7 +30,7 @@ class NewCard extends Component {
             word: this.state.word,
             definition: this.state.definition,
         }
-        await axios.post(`http://127.0.0.1:8000/collections/`,newCard);
+        await axios.put(`http://127.0.0.1:8000/collections/`,newCard);
      };
 
 
