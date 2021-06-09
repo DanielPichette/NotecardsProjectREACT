@@ -7,12 +7,12 @@ class NewCard extends Component {
             this.state = {
                 collection: 0,
                 word: '',
-                definition:'',
+                definition:'Please make sure you have a collection selected before you attemopt to create a new card. cards without a collection will be lost in cyberspace!',
              }
         }
     handleDefinitionChange = (event) =>{
         this.setState({
-        body: event.target.value
+        definition: event.target.value
         });
         };
 
@@ -37,23 +37,19 @@ class NewCard extends Component {
     render() {
         return (           
            <div>
-               <div className='header'>
-                <h2> Collection: {this.props.name}</h2>
-               <h2>New Card:</h2>
-               </div>
-              
+               <h2></h2>
                 <form className="newCardForm" onSubmit={(event) => this.handleSubmit(event)}>
                     <div>
                         <label>Term</label>
                     </div> 
                     <div>
-                        <input placeholder='Please make sure you have a collection selected before you attemopt to create a new card. cards without a collection will be lost in cyberspace!' type="text" name="word" onChange={(event) => this.handleTermChange(event)}/>
+                        <input type="text" name="word" onChange={(event) => this.handleTermChange(event)}/>
                     </div>
                     <div>
                         <label>Definition</label>
                     </div> 
                     <div>
-                        <input type="text" name="definition" placeholder='Please make sure you have a collection selected before you attemopt to create a new card. cards without a collection will be lost in cyberspace!' onChange={(event) => this.handleDefinitionChange(event)}/>
+                        <input type="text" name="definition" placeholder={this.state.definition} onChange={(event) => this.handleDefinitionChange(event)}/>
                     </div>
                     <button type="submit" >Create</button>
                 
