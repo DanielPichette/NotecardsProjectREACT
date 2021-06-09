@@ -12,7 +12,7 @@ class UpdateCard extends Component {
         }
     handleDefinitionChange = (event) =>{
         this.setState({
-        body: event.target.value
+        definition: event.target.value
         });
         };
 
@@ -25,13 +25,13 @@ class UpdateCard extends Component {
     handleSubmit = async(event) =>{
         //event.preventDefault();
 
-        const newCard = {
-            id:this.props.CardId,
-            collection: this.props.collection,
+        const updateCard = {
+            //id:this.props.CardId,
             word: this.state.word,
             definition: this.state.definition,
+            collection: this.props.collectionId,
         }
-        await axios.put(`http://127.0.0.1:8000/notecards/`,newCard);
+        await axios.put(`http://127.0.0.1:8000/notecards/${this.props.CardId}/`,updateCard);
      };
 
 
@@ -39,7 +39,7 @@ class UpdateCard extends Component {
         return (           
            <div>
                <div className='header'>
-                    <h2> Collection: {this.props.name}</h2>
+                    <h2> Collection: {this.props.collectionName}</h2>
                     <h2>Update Card:</h2>       
                </div>
                

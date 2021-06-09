@@ -88,7 +88,7 @@ class Body extends Component {
         else if (this.props.view==='quiz'){
             return(
               <div>
-                <Quiz deck={this.state.currentDeck} name={this.state.currentCollectionName}/>
+                <Quiz deck={this.state.currentDeck} name={this.state.currentCollectionName} collection={this.state.currentCollection}/>
               </div>
             );
         }

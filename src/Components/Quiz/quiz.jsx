@@ -72,7 +72,7 @@ class Quiz extends Component {
     else if(this.state.view === 'update'){
         return(
             <div>
-                <UpdateCard />
+                <UpdateCard collectionName={this.props.name} collectionId={this.props.collection} CardId={this.state.deck[this.state.cardIndex].id}/>
             </div>
             );
         }
