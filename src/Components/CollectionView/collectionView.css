@@ -20,15 +20,19 @@
 .header{
     display: grid;
     grid-area: header;
+    background-color: rgba(31, 31, 31, 0.38);
+    place-content: center;
+    color: white;
 }
 
 .card{
     display: grid;
-    background-image: linear-gradient(rgb(111, 144, 171), rgb(173, 210, 205));
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(129, 240, 225, 0.612));
     place-content: center;
     height:32vh;
     width: 13vw;
     margin: auto;
     margin-bottom: 10px;
     margin-top: 10px;
+    border-style: solid;
 }
