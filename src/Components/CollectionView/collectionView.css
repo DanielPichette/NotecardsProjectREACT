@@ -24,7 +24,7 @@
 
 .card{
     display: grid;
-    background-color: rgba(255, 255, 255, 0.425);
+    background-image: linear-gradient(rgb(111, 144, 171), rgb(173, 210, 205));
     place-content: center;
     height:32vh;
     width: 13vw;

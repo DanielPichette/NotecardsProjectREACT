@@ -1,6 +1,6 @@
-import { render } from '@testing-library/react';
 import React, { Component } from 'react'; 
 import UpdateCard from '../UpdateCard/updateCardForm';
+import './quiz.css';
 
 
 class Quiz extends Component {
@@ -46,24 +46,34 @@ class Quiz extends Component {
     render(){
     if (this.state.view === 'quiz'){
         return(
-            <div QuizBaody>
-            <div>
+            <div className='QuizBody'>
+            <div className='head'>
                 <h3>Collection: {this.state.currentCollection}</h3>
                 <h5>Card: {this.state.cardIndex + 1} of {this.state.deck.length}</h5>
-                <button onClick={()=>this.updateCard()} >Update This Card</button>
             </div>
-            <button onClick={() => this.previouseCard()} > Previos card</button>
-            <div>
+            <div className='back'>
+                <button className='previousbutton' onClick={() => this.previouseCard()} > Previos card</button>
+            </div>
+            <div className='Quizcard'>
                 <h1>{this.state.deck[this.state.cardIndex].word}</h1>
-                <h4>{this.state.deck[this.state.cardIndex].definition}</h4>
+                <h2>{this.state.deck[this.state.cardIndex].definition}</h2>
             </div>
-            <button onClick= {() => this.nextCard()} >Next card</button>
+            <div className='next'>
+               <button className = 'nextbutton' onClick= {() => this.nextCard()} >Next card</button>
+            </div>
+            <div className='update'>
+                <br/>
+                <button onClick={()=>this.updateCard()} >Update This Card</button>
+                <br/>
+            </div>
             </div>
             );
         }
     else if(this.state.view === 'update'){
         return(
-            <UpdateCard />
+            <div>
+                <UpdateCard />
+            </div>
             );
         }
     }

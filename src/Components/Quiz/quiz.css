@@ -1,0 +1,58 @@
+.QuizBody{
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    'head head head'
+    'back card next'
+    'update update update';
+    place-content: center;
+}
+
+.head{
+    display: grid;
+    grid-area: head;
+}
+
+.back{
+    display: grid;
+    grid-area: back;
+}
+
+.Quizcard{
+    display: grid;
+    grid-area: card;
+    place-content: center;
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(255, 166, 42, 0.263));
+    height: 70vh;
+    text-align: center;
+    border-style:solid;
+    background-size: contain;
+
+}
+
+.next{
+    display: grid;
+    grid-area: next;
+}
+
+.update{
+    display: flex;
+    grid-area: update;
+    height: 5vh;
+    place-content: center;
+   
+}
+.nextbutton{
+    font-size: x-large;
+    color: rgb(255, 255, 255);
+    background-color: rgba(220, 20, 60, 0);
+    border: rgba(220, 20, 60, 0);
+}
+
+.previousbutton{
+    font-size: x-large;
+    color: rgb(255, 255, 255);
+    background-color: rgba(220, 20, 60, 0);
+    border: rgba(220, 20, 60, 0);
+}
