@@ -15,7 +15,7 @@ function currentCollection(props){
                         <div className="card">
                             <h3 >{card.word}</h3>
                             <h5>definition: <br/> {card.definition}</h5>
-                            <h9> <br/> <br/> (collection: {card.collection})</h9>
+                            
                         </div>
                     )
                 })};
