@@ -25,11 +25,7 @@ class NewCollection extends Component {
 
         await axios.post(`http://127.0.0.1:8000/collections/`,newCollection);
 
-        // const newComment = {
-        //     collection: this.props.collection,
-        //     word: this.state.word,
-        //     definition: this.state.definition,
-        // }
+    
      };
 
 
