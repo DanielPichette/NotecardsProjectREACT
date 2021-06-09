@@ -51,6 +51,7 @@ class Body extends Component {
             currentDeck: deck,
         });
         this.getCurrentDeck();
+        this.props.gotoCollection();
     }
 
     getCurrentDeck(){
@@ -63,7 +64,7 @@ class Body extends Component {
        if(this.props.view==='collections'){
           return (
             <div class='content' >
-              <CollectionView collections={this.state.allCollections} currentCollection={(id,name)=>this.setCurrentCollection(id,name)}/>
+              <CollectionView collections={this.state.allCollections} currentCollection={(id,name)=>this.setCurrentCollection(id,name)} />
             </div>
           );
         }

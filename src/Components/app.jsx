@@ -72,7 +72,7 @@ class App extends Component {
                     </div>
                     
                     <div class='body' >
-                        <Body view={this.state.view} currentDeck={()=>this.setCurrentDeck()} />
+                        <Body view={this.state.view} currentDeck={()=>this.setCurrentDeck()} gotoCollection={()=>this.navCurrentCollection()} />
                     </div>
 
                 </div>
