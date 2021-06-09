@@ -36,6 +36,9 @@ class NewCollection extends Component {
     render() {
         return (           
            <div>
+               <div className='header'>
+                   <h1>Create New Collection</h1>
+               </div>
                 <form className="newCollection" onSubmit={(event) => this.handleSubmit(event)}>
                     <div>
                         <label> Collection Name</label>

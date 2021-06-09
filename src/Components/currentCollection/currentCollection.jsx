@@ -6,7 +6,7 @@ function currentCollection(props){
         <div className='main'>
             <div class='header'>
                 <h1>Collection: {props.collection}</h1>
-                <h5>(total Cards: {props.cards.length})</h5>
+                <h2>(total Cards: {props.cards.length})</h2>
 
             </div>
             <div className='grid'>

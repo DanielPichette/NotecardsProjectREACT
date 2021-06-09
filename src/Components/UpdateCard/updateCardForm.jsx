@@ -38,8 +38,11 @@ class UpdateCard extends Component {
     render() {
         return (           
            <div>
-               <h2> Collection: {this.props.name}</h2>
-               <h2>Update Card:</h2>
+               <div className='header'>
+                    <h2> Collection: {this.props.name}</h2>
+                    <h2>Update Card:</h2>       
+               </div>
+               
                 <form className="newCardForm" onSubmit={(event) => this.handleSubmit(event)}>
                     <div>
                         <label>Term</label>

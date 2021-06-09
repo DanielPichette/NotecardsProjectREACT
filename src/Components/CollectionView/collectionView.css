@@ -20,14 +20,14 @@
 .header{
     display: grid;
     grid-area: header;
-    background-color: rgba(31, 31, 31, 0.38);
+    background-image: linear-gradient(rgb(0, 0, 0),rgba(52, 61, 63, 0.297));
     place-content: center;
     color: white;
 }
 
 .card{
     display: grid;
-    background-image: linear-gradient(rgb(255, 255, 255), rgba(129, 240, 225, 0.612));
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(203, 254, 247, 0.736));
     place-content: center;
     height:32vh;
     width: 13vw;
@@ -35,4 +35,6 @@
     margin-bottom: 10px;
     margin-top: 10px;
     border-style: solid;
+    border-radius: 20px;
+    text-align: center;
 }

@@ -48,8 +48,8 @@ class Quiz extends Component {
         return(
             <div className='QuizBody'>
             <div className='head'>
-                <h3>Collection: {this.state.currentCollection}</h3>
-                <h5>Card: {this.state.cardIndex + 1} of {this.state.deck.length}</h5>
+                <h1>Collection: {this.state.currentCollection}</h1>
+                <h2>Card: {this.state.cardIndex + 1} of {this.state.deck.length}</h2>
             </div>
             <div className='back'>
                 <button className='previousbutton' onClick={() => this.previouseCard()} > Previos card</button>

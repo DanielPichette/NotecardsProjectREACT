@@ -4,3 +4,8 @@ background-image: linear-gradient(rgb(23, 47, 65),rgb(20, 99, 111))
 color: white;
     
 }
+ h{
+     display:inline-block;
+     border-style: solid;
+     padding:9px;
+ }

@@ -10,7 +10,7 @@ input{
 .searchbody{
     display: grid;
     place-content: center;
-    background-color: rgb(78, 113, 123);
+    background-color: rgb(25, 53, 61);
 }
 .SearchBar{
     place-content: center

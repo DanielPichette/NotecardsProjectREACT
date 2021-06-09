@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+*{
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
 .wrapper{
     background-color: rgb(255, 255, 255);
     display: grid;
@@ -13,7 +19,7 @@
 .navigation{
     display: grid;
     grid-area: nav;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .searchbar{
@@ -25,4 +31,10 @@
     display: grid;
     grid-area: body;
     background-image: url(https://images.pexels.com/photos/3737703/pexels-photo-3737703.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+}
+
+form{
+    background-image: linear-gradient(rgb(255, 255, 255),rgba(255, 149, 0, 0.548));
+    border-style: solid;
+    border-radius: 25px;
 }

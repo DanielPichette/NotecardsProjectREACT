@@ -29,7 +29,7 @@ class CollectionView extends Component{
             <div className='main' >
                 <div class='header'>
                     <h1>All Collections</h1>
-                    <h5>(total collections: {this.props.collections.length})</h5>
+                    <h3>(total collections: {this.props.collections.length})</h3>
                 </div>
                 <div className='grid'>
                     {this.props.collections.map( (collection) =>{
