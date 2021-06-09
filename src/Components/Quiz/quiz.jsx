@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import React, { Component } from 'react'; 
+import UpdateCard from '../UpdateCard/updateCardForm';
 
 
 class Quiz extends Component {
@@ -11,6 +12,7 @@ class Quiz extends Component {
             currentCollection: this.props.name,
             deck: this.props.deck,
             cardIndex: 0,
+            view: 'quiz'
         }
     }
     nextCard(){
@@ -35,12 +37,20 @@ class Quiz extends Component {
         });
     }
 
+    updateCard(event){
+        this.setState({
+            view:'update'
+        });
+    }
+
     render(){
-    return(
-        <div QuizBaody>
+    if (this.state.view === 'quiz'){
+        return(
+            <div QuizBaody>
             <div>
                 <h3>Collection: {this.state.currentCollection}</h3>
                 <h5>Card: {this.state.cardIndex + 1} of {this.state.deck.length}</h5>
+                <button onClick={()=>this.updateCard()} >Update This Card</button>
             </div>
             <button onClick={() => this.previouseCard()} > Previos card</button>
             <div>
@@ -48,10 +58,15 @@ class Quiz extends Component {
                 <h4>{this.state.deck[this.state.cardIndex].definition}</h4>
             </div>
             <button onClick= {() => this.nextCard()} >Next card</button>
-
-        </div>
-        )
+            </div>
+            );
+        }
+    else if(this.state.view === 'update'){
+        return(
+            <UpdateCard />
+            );
+        }
     }
 }
      
-    export default Quiz;
+export default Quiz;

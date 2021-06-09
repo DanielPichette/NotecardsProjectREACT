@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class NewCard extends Component {
+class UpdateCard extends Component {
     constructor(props) {
         super(props);
             this.state = {
                 collection: 0,
                 word: '',
-                definition:'Please make sure you have a collection selected before you attemopt to create a new card. cards without a collection will be lost in cyberspace!',
+                definition:'',
              }
         }
     handleDefinitionChange = (event) =>{
@@ -23,20 +23,23 @@ class NewCard extends Component {
        };
 
     handleSubmit = async(event) =>{
-        event.preventDefault();
+        //event.preventDefault();
 
         const newCard = {
+            id:this.props.CardId,
             collection: this.props.collection,
             word: this.state.word,
             definition: this.state.definition,
         }
-        await axios.put(`http://127.0.0.1:8000/collections/`,newCard);
+        await axios.put(`http://127.0.0.1:8000/notecards/`,newCard);
      };
 
 
     render() {
         return (           
            <div>
+               <h2> Collection: {this.props.name}</h2>
+               <h2>Update Card:</h2>
                 <form className="newCardForm" onSubmit={(event) => this.handleSubmit(event)}>
                     <div>
                         <label>Term</label>
@@ -50,7 +53,7 @@ class NewCard extends Component {
                     <div>
                         <input type="text" name="definition" placeholder={this.state.definition} onChange={(event) => this.handleDefinitionChange(event)}/>
                     </div>
-                    <button type="submit" >Create</button>
+                    <button type="submit" >Update</button>
                 
                 </form>
             </div>
@@ -58,4 +61,4 @@ class NewCard extends Component {
     }
 }
 
-export default NewCard;
+export default UpdateCard;
