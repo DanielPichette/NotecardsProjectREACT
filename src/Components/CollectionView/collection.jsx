@@ -36,6 +36,7 @@ class CollectionView extends Component{
                         return(
                             <div className="card" onClick={(event)=>this.props.currentCollection(collection.id, collection.name)}>
                                 <h3 >{collection.name}</h3>
+                                <p>({collection.id})</p>
                             </div>
                         )
                     })}

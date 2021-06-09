@@ -56,7 +56,7 @@ class Quiz extends Component {
             </div>
             <div className='Quizcard'>
                 <h1>{this.state.deck[this.state.cardIndex].word}</h1>
-                <h2>{this.state.deck[this.state.cardIndex].definition}</h2>
+                <h2>Definition: <br/> {this.state.deck[this.state.cardIndex].definition}</h2>
             </div>
             <div className='next'>
                <button className = 'nextbutton' onClick= {() => this.nextCard()} >Next card</button>

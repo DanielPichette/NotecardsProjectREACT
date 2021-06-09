@@ -37,13 +37,16 @@ class NewCard extends Component {
     render() {
         return (           
            <div>
-               <h2></h2>
+               <div className='header'>
+                   <h1>Collection: {this.props.name} ({this.props.collection})</h1>
+                   <h2>Create New Card</h2>
+               </div>
                 <form className="newCardForm" onSubmit={(event) => this.handleSubmit(event)}>
                     <div>
                         <label>Term</label>
                     </div> 
                     <div>
-                        <input type="text" name="word" onChange={(event) => this.handleTermChange(event)}/>
+                        <input type="text" name="word" placeholder={this.state.definition} onChange={(event) => this.handleTermChange(event)}/>
                     </div>
                     <div>
                         <label>Definition</label>
